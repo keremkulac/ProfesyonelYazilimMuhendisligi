@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product/product.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-new-product',
@@ -6,7 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-product.component.scss']
 })
 export class NewProductComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
+  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
+
+  listId: string;
+  
+  ngOnInit() {
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.listId = params['listId'];
+      }
+    )
   }
+
+ 
+
+  
+  createProduct(title: string) {
+    this.productService.createProduct(title, this.listId).subscribe((newProduct: any) => {
+      this.router.navigate(['../'], { relativeTo: this.route });
+    })
+  }
+  
+
+
+
 }
