@@ -1,0 +1,80 @@
+
+<div class="product-content" >
+  <div class="product-manager-container">
+
+    <div class="sidebar has-background-white">
+      <h1 class="title has-text-primary">
+        LİSTELERİM
+      </h1>
+
+      <div class="list-menu">
+        <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]" routerLinkActive="is-active">
+          <p>{{ list.title }}</p>
+        </a>
+      </div>
+      <button class="btn btn-primary" routerLink="/new-list">+ Yeni Liste Ekle</button>
+    </div>
+
+    <div class="product-list-container has-background-light">
+      <div *ngIf="products">
+        <div class="top-bar">
+          <h1 class="title has-text-primary">
+            ALINACAKLAR
+          </h1>
+          <div class="dropdown is-hoverable is-right">
+            <div class="dropdown-trigger">
+              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                <span class="icon is-small">
+                  <i class="fas fa-cog" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+              <div class="dropdown-content">
+                <a [routerLink]="['/edit-list', selectedListId]" class="dropdown-item">
+                  Güncelle
+                </a>
+                <a (click)="onDeleteListClick()" class="dropdown-item has-text-danger">
+                  Sil
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product" *ngFor="let product of products" (click)="onProductClick(product)" [ngClass]="{ 'completed': product.completed }">
+          <div class="product-text">
+            <p>{{ product.title }}</p>
+          </div>
+          <div class="product-buttons">
+
+            <button class="button" [routerLink]="['/lists', selectedListId, 'edit-product', product._id]">
+              <div class="product-icon">
+                <i class="fas fa-edit"></i>
+              </div>
+            </button>
+
+            <button class="btn btn-danger" (click)="onDeleteProductClick(product._id)" style="margin-left: 10px;">
+              <div class="product-icon">
+                <i class="fas fa-trash"></i>
+              </div>
+            </button>
+
+          </div>
+        </div>
+
+        <h3 class="empty-state-text" *ngIf="products.length === 0">Henüz bir ürün eklemediniz. Ekle butonuna tıklayarak bir ürün ekleyebilirsiniz!</h3>
+
+        <button routerLink="./new-product" class="circle-add-button button is-primary">
+          <img src="../../../assets/plus-icon.svg" class="has-text-white">
+        </button>
+      </div>
+
+      <div *ngIf="!products">
+        <h3 class="empty-state-text">Yan taraftan bir liste seçiniz</h3>
+      </div>
+
+    </div>
+
+  </div>
+</div>
