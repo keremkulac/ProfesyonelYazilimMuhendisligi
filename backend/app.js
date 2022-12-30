@@ -83,6 +83,16 @@ app.get('/lists', authenticate, (req, res) => {
     });
 })
 
+app.get('/user-list',authenticate,(req,res)=>{
+    User.find({
+            
+    }).then((users)=>{
+        res.send(users);
+    }).catch((e)=>{
+        res.send(e);
+    });
+})
+
 app.post('/lists', authenticate, (req, res) => {
     let title = req.body.title;
 

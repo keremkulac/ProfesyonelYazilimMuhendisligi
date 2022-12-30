@@ -7,6 +7,7 @@ import { NewListComponent } from './components/new-list/new-list.component';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { SignupPageComponent } from './components/signup-page/signup-page.component';
 import { ProductViewComponent } from './components/product-view/product-view.component';
+import { ViewUserComponent } from './components/view-user/view-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/lists', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'lists/:listId', component: ProductViewComponent },
   { path: 'lists/:listId/new-product', component: NewProductComponent },
   { path: 'lists/:listId/edit-product/:productId', component: EditProductComponent },
+  { path: 'user-list', component: ViewUserComponent },
 ];
 
 @NgModule({

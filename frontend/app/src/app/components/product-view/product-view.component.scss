@@ -4,26 +4,39 @@
 .product-manager-container {
     display: flex;
     width: 100%;
-    height: 100%;  
+    height: 100%;
+    
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
     width: 250px;
-    background: white;
+    background: rgb(245, 241, 241);
     padding: 42px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+
+    
+}
+.sidebar .btn{
+    background-color: #7471b6;
+    border: none;
+}
+.sidebar .btn:hover{
+    background-color:#56538f ;
 }
 
+
 .product-list-container {
+    background-color: #adacd2;
     position: relative;
     display: flex;
     flex-direction: column;
+    
     flex-grow: 1;
     padding: 42px;
-    border-top-right-radius: 8px;
+    border-top-right-radius: 8px;   
     border-bottom-right-radius: 8px;
 
     .top-bar {
@@ -41,6 +54,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 15px;
+    text-align: center;
     flex-grow: 1; 
 
     .list-menu-item {
@@ -51,14 +65,19 @@
         width: 100%;
         color: #5f5f5f;
         margin-bottom: 5px;
+        text-decoration: none;
 
         &:hover {
-            background:#45f69e ;
+          
+            background:#adacd2 ;
+            color: white;
         }
 
         &.is-active {
-            background-color: #cff8ef;
-            color: rgb(0, 100, 80);
+            background-color: #7471b6;
+            color: white;
+            text-align: center;
+           // color: rgb(0, 100, 80);
         }
     }
 }
@@ -110,12 +129,15 @@
 }
 
 .circle-add-button {
-    position: absolute;
+    margin-left: 97%;
+    margin-top: 5px;
     bottom: 35px;
     right: 35px;
     height: 50px;
     width: 50px;
     border-radius: 50%;   
+    background-color: #7471b6;
+    border: none    ;
 }
 
 .empty-state-text {

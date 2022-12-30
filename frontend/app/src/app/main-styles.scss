@@ -3,143 +3,161 @@
 // Import Fonts (Lato and Nunito)
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
-// $turquoise: #44ddd0;
-// $green: #27d7a1;
-// $light-green: #45f69e; 
-// $dark-green: rgb(0, 100, 80);
+$turquoise: #44ddd0;
+$green: #27d7a1;
+$light-green: #45f69e; 
+$dark-green: rgb(0, 100, 80);
 
-// $light: #f8f8f8;
-
-
-// // Update Bulma's global variables
-// $family-sans-serif: "Nunito", sans-serif;
-// $primary: $green;
-
-// $link: $turquoise;
+$light: #f8f8f8;
 
 
-// // Update some of Bulma's component variables
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$primary: $green;
 
-// $control-border-width: 2px;
-// $input-border-color: transparent;
-// $input-shadow: none;
+$link: $turquoise;
 
-// .vh-100{
 
-// }
-// .card{
-//     background-color: aqua;
+// Update some of Bulma's component variables
+
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+.vh-100{
+
+}
+.card{
+    background-color: aqua;
    
-// }
+}
 
-// .body {
-//     min-height: 100vh; 
-//     background-color: aqua;
-//     display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	min-height: 100vh;
-// }
-// .content-center {
-//     background: linear-gradient(90deg, #5D54A4, #7C78B8);		
-// 	position: relative;	
-// 	height: 600px;
-// 	width: 360px;	
-// 	box-shadow: 0px 0px 24px #5C5696;
-// }
-// .content-center .text-center {
-//     z-index: 1;
-// 	position: relative;	
-// 	height: 100%;
-// }
+.body {
+    min-height: 100vh; 
+    background-color: aqua;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+.content-center {
+    background: linear-gradient(90deg, #5D54A4, #7C78B8);		
+	position: relative;	
+	height: 600px;
+	width: 360px;	
+	box-shadow: 0px 0px 24px #5C5696;
+}
+.content-center .text-center {
+    z-index: 1;
+	position: relative;	
+	height: 100%;
+}
 
-// .content-center input {
-//     border-style: solid;
-//     padding: 10px 5px;
-//     padding-left: 40px;
-//     border-width:  1px;
-//     border-radius: 10px;   
-//     box-sizing: border-box;
-//     width: 100%;
-// }
+.content-center input {
+    border-style: solid;
+    padding: 10px 5px;
+    padding-left: 40px;
+    border-width:  1px;
+    border-radius: 10px;   
+    box-sizing: border-box;
+    width: 100%;
+}
 
-// .content-center input:hover {
-//     border-color: #0275d8;
-// }
-// .content-center input:focus {
-//     border-color: #0275d8;
-// }
-// .content-center input:active {
-//     border-color: #0275d8;
-// }
-// .content-center button{
-//     width: 100%;
-//     padding: 10px 5px;
-//     border: none;
-//     outline: none; 
-//     background-color: #0275d8;
-//     color: #FFF;
-// }
+.content-center input:hover {
+    border-color: #0275d8;
+}
+.content-center input:focus {
+    border-color: #0275d8;
+}
+.content-center input:active {
+    border-color: #0275d8;
+}
+.content-center button{
+    width: 100%;
+    padding: 10px 5px;
+    border: none;
+    outline: none; 
+    background-color: #0275d8;
+    color: #FFF;
+}
 
-// .content-center button:hover {
-//     background-color: #0275d8;
-//     cursor: pointer;
-// }
-// .content-center button:active {
-//     background-color: #0275d8;
-// }
+.content-center button:hover {
+    background-color: #0275d8;
+    cursor: pointer;
+}
+.content-center button:active {
+    background-color: #0275d8;
+}
  
-// .icon {
-//     position: absolute;
-//     padding: 15px;
-//     color: black;
-// }
+.icon {
+    position: absolute;
+    padding: 15px;
+    color: black;
+}
 
-// h1{
-//     margin-bottom: 25px;
-// }
+h1{
+    margin-bottom: 25px;
+}
 
+html {
+    background: linear-gradient(to right top, $turquoise, $green);
+}
 
-// Set custom global styles (will be applied to whole app)
+html, body {
+    height: 100%;
+}
 
-// html {
-//     background: linear-gradient(to right top, $turquoise, $green);
-// }
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
 
-// html, body {
-//     height: 100%;
-// }
+.modal-box {
+    min-height: 200px;
+    width: 100%;
+    max-width: 580px;
+    background: white;
+    border-radius: 5px;
+    padding: 35px;
+}
 
-// .centered-content {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: 100%;
-//     height: 100%;
-// }
+.title {
+    font-size: 24px;
+}
 
-// .modal-box {
-//     min-height: 200px;
-//     width: 100%;
-//     max-width: 580px;
-//     background: white;
-//     border-radius: 5px;
-//     padding: 35px;
-// }
+.white-box {
+    padding: 35px;
+    background: white;
+    border-radius: 5px;
+    width: 350px;
+    max-width: 350px;
+}
 
-// .title {
-//     font-family: 'Lato';
-//     font-size: 24px;
-//     text-transform: uppercase;
-//     letter-spacing: 2px;
-// }
+.btn{
+    cursor: pointer;
+    margin: 5px;
+    border: none;
+    background-color: #7471b6;
+    color: white;
+}
+.btn:hover{
+    background-color:#56538f ;
+}
 
-// .white-box {
-//     padding: 35px;
-//     background: white;
-//     border-radius: 5px;
+.input{
+    width: 500px;
+    border-radius: 5px;
+    border-color: #adacd2 ;
+    padding: 5px;
+}
+.input:hover{
+    border-color: #7471b6;
+ 
+}
 
-//     width: 350px;
-//     max-width: 350px;
-    
-// }
+.modal-box{
+    background-color: #adacd2;
+}

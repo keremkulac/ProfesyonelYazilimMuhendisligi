@@ -12,6 +12,7 @@ import { WebReqInterceptor } from './web-req.interceptor';
 import { SignupPageComponent } from './components/signup-page/signup-page.component';
 import { EditListComponent } from './components/edit-list/edit-list.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { ViewUserComponent } from './components/view-user/view-user.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     LoginPageComponent,
     SignupPageComponent,
     EditListComponent,
-    EditProductComponent
+    EditProductComponent,
+    ViewUserComponent
   ],
   imports: [
     BrowserModule,

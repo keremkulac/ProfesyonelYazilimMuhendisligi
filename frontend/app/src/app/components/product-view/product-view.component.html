@@ -1,4 +1,5 @@
 
+<div class="all-background">
 <div class="product-content" >
   <div class="product-manager-container">
 
@@ -22,13 +23,6 @@
             ALINACAKLAR
           </h1>
           <div class="dropdown is-hoverable is-right">
-            <div class="dropdown-trigger">
-              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-                <span class="icon is-small">
-                  <i class="fas fa-cog" aria-hidden="true"></i>
-                </span>
-              </button>
-            </div>
             <div class="dropdown-menu" id="dropdown-menu4" role="menu">
               <div class="dropdown-content">
                 <a [routerLink]="['/edit-list', selectedListId]" class="dropdown-item">
@@ -64,10 +58,10 @@
         </div>
 
         <h3 class="empty-state-text" *ngIf="products.length === 0">Henüz bir ürün eklemediniz. Ekle butonuna tıklayarak bir ürün ekleyebilirsiniz!</h3>
-
-        <button routerLink="./new-product" class="circle-add-button button is-primary">
-          <img src="../../../assets/plus-icon.svg" class="has-text-white">
+        <button routerLink="./new-product" class="circle-add-button">
+          <i class="fa-solid fa-plus"></i>
         </button>
+
       </div>
 
       <div *ngIf="!products">
@@ -77,4 +71,6 @@
     </div>
 
   </div>
+</div>
+
 </div>

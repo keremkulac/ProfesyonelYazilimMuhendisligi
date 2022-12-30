@@ -40,9 +40,7 @@ export class ProductViewComponent implements OnInit {
   }
 
   onProductClick(product: Product) {
-    // we want to set the task to completed
     this.productService.complete(product).subscribe(() => {
-      // the task has been set to completed successfully
       console.log("Completed successully!");
       product.completed = product.completed;
     })

@@ -15,17 +15,14 @@ export class ProductService {
   }
 
   createList(title: string) {
-    // We want to send a web request to create a list
     return this.webReqService.post('lists', { title });
   }
 
   updateList(id: string, title: string) {
-    // We want to send a web request to update a list
     return this.webReqService.patch(`lists/${id}`, { title });
   }
 
   updateProduct(listId: string, productId: string, title: string) {
-    // We want to send a web request to update a list
     return this.webReqService.patch(`lists/${listId}/products/${productId}`, { title });
   }
 
@@ -42,7 +39,6 @@ export class ProductService {
   }
 
   createProduct(title: string, listId: string) {
-    // We want to send a web request to create a task
     return this.webReqService.post(`lists/${listId}/products`, { title });
   }
 
