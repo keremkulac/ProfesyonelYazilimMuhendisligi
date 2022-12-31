@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
 const mongoose = require('./db/mongoose');
 const{List,Product,User} = require('./models');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
-
 
 const jwt = require('jsonwebtoken');
 
@@ -93,6 +93,13 @@ app.get('/user-list',authenticate,(req,res)=>{
     });
 })
 
+app.delete('/user-list/:id', authenticate, (req, res) => {
+    User.findOne({_id: req.params.id}, function (error, user){
+        user.remove();
+    });
+  
+});
+
 app.post('/lists', authenticate, (req, res) => {
     let title = req.body.title;
 
@@ -122,8 +129,6 @@ app.delete('/lists/:id', authenticate, (req, res) => {
         deleteProductsFromList(removedListDoc._id);
     })
 });
-
-
 
 app.get('/lists/:listId/products', authenticate, (req, res) => {
     Product.find({
@@ -268,6 +273,14 @@ let deleteProductsFromList = (_listId) => {
     })
 }
 
-app.listen(3000, () => {
-    console.log("Server is listening on port 3000");
+let deleteUsersFromList = (_id)=>{
+    User.deleteMany({
+        _id
+    }).then(()=>{
+        console.log("User from " + _id + " were deleted!");
+    })
+}
+
+app.listen(process.env.PORT, () => {
+    console.log("Server is listening on port "+process.env.PORT);
 });

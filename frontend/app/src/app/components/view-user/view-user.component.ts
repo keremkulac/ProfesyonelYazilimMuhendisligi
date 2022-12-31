@@ -10,11 +10,10 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class ViewUserComponent implements OnInit {
   users : User[];
+  selectedUserId : string;
   
   constructor(private route: ActivatedRoute, private router: Router,private userService: UserService) { }
   ngOnInit(): void {
-
-
     this.userService.getUsers().subscribe((user:any)=>{
       this.users = user;
       console.log(this.users)
@@ -22,4 +21,15 @@ export class ViewUserComponent implements OnInit {
     
   }
 
-}
+  onDeleteUserClick(userId:string) {
+    this.userService.deleteUser(userId).subscribe((res: any) => {
+      this.router.navigate(['/user-list']);
+      console.log(res);
+    })
+  }
+
+  }
+
+ 
+
+

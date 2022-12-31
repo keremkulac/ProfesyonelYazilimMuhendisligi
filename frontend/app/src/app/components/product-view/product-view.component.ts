@@ -3,6 +3,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Product } from 'src/app/models/product.model';
 import { List } from 'src/app/models/list.model';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-product-view',
@@ -16,7 +17,7 @@ export class ProductViewComponent implements OnInit {
 
   selectedListId: string;
 
-  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router,private authService : AuthService) { }
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -58,6 +59,11 @@ export class ProductViewComponent implements OnInit {
       this.products = this.products!.filter(val => val._id !== id);
       console.log(res);
     })
+  }
+
+  onLogoutClick(){
+   // this.authService.logout();
+    this.router.navigate(['/login']);
   }
 
 }

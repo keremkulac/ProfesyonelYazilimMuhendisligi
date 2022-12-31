@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product/product.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-new-product',
@@ -21,9 +20,6 @@ export class NewProductComponent implements OnInit {
       }
     )
   }
-
- 
-
   
   createProduct(title: string) {
     this.productService.createProduct(title, this.listId).subscribe((newProduct: any) => {
@@ -31,7 +27,4 @@ export class NewProductComponent implements OnInit {
     })
   }
   
-
-
-
 }

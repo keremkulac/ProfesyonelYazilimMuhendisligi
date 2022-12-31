@@ -1,14 +1,19 @@
 
 <div class="all-background">
+  
 <div class="product-content" >
+ 
   <div class="product-manager-container">
-
+    <button class="logout">
+      <i (click)="onLogoutClick()" class="fas fa-sign-out-alt"></i>
+     </button>
     <div class="sidebar has-background-white">
       <h1 class="title has-text-primary">
         LİSTELERİM
       </h1>
 
       <div class="list-menu">
+       
         <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]" routerLinkActive="is-active">
           <p>{{ list.title }}</p>
         </a>
@@ -19,6 +24,7 @@
     <div class="product-list-container has-background-light">
       <div *ngIf="products">
         <div class="top-bar">
+        
           <h1 class="title has-text-primary">
             ALINACAKLAR
           </h1>

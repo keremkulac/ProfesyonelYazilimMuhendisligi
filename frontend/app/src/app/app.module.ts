@@ -24,7 +24,7 @@ import { ViewUserComponent } from './components/view-user/view-user.component';
     SignupPageComponent,
     EditListComponent,
     EditProductComponent,
-    ViewUserComponent
+    ViewUserComponent,
   ],
   imports: [
     BrowserModule,

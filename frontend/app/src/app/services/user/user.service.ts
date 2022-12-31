@@ -14,4 +14,8 @@ export class UserService {
     return this.webReqService.get('user-list');
   }
 
+  deleteUser(userId: string) {
+    return this.webReqService.delete(`user-list/${userId}`);
+  }
+
 }

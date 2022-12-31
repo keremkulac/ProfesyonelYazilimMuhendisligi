@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product/product.service';
 import { Router } from '@angular/router';
-import { List } from 'src/app/models/list.model';
 
 @Component({
   selector: 'app-new-list',
@@ -19,7 +18,6 @@ export class NewListComponent implements OnInit {
   createList(title: string) {
     this.productService.createList(title).subscribe((list: any) => {
       console.log(list);
-      // Now we navigate to /lists/task._id
       this.router.navigate([ '/lists', list._id ]); 
     });
   }
